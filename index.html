@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broken Auth Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-container">
+        <h2>Login to View Images</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="attemptLogin()">Login</button>
+        <p id="error-msg"></p>
+    </div>
+
+    <!-- The images are loaded by the browser immediately, just hidden visually -->
+    <div id="gallery-container" class="hidden">
+        <h2>Secret Gallery</h2>
+        <img src="https://picsum.photos/id/1015/300/200" alt="Landscape">
+        <img src="https://picsum.photos/id/1016/300/200" alt="Mountains">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
