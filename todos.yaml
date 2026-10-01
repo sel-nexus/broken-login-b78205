@@ -1,0 +1,18 @@
+todos:
+  - id: stabilize-login-flow
+    content: Repair the broken static login flow and add regression tests for valid, invalid, and bypass attempts.
+    scope: M
+    files:
+      - index.html
+      - app.js
+      - style.css
+      - tests/app.test.js
+      - README.md
+      - CHANGELOG.md
+    acceptance:
+      - Valid credentials reveal the gallery and clear any prior error message.
+      - Invalid credentials keep the gallery hidden and show a generic error message without a bypass hint.
+      - The previous bypass username path is rejected and covered by an automated regression test.
+      - The repository includes a repeatable test command that exercises the repaired login behavior.
+    verify: node tests/app.test.js
+    status: done

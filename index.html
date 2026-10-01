@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Broken Auth Gallery</title>
+    <meta name="description" content="A repaired static login demo with regression-tested access control behavior.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="login-container">
-        <h2>Login to View Images</h2>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="attemptLogin()">Login</button>
-        <p id="error-msg"></p>
-    </div>
+    <main class="page-shell">
+        <section id="login-container" class="panel" aria-labelledby="login-title">
+            <p class="eyebrow">Protected preview</p>
+            <h1 id="login-title">Login to view the gallery</h1>
+            <p class="supporting-text">Use the supported credentials to unlock the gallery.</p>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Username" autocomplete="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+            <button id="login-button" type="button">Login</button>
+            <p id="error-msg" role="alert" aria-hidden="true"></p>
+        </section>
 
-    <!-- The images are loaded by the browser immediately, just hidden visually -->
-    <div id="gallery-container" class="hidden">
-        <h2>Secret Gallery</h2>
-        <img src="https://picsum.photos/id/1015/300/200" alt="Landscape">
-        <img src="https://picsum.photos/id/1016/300/200" alt="Mountains">
-    </div>
+        <section id="gallery-container" class="panel hidden" aria-labelledby="gallery-title">
+            <p class="eyebrow">Unlocked</p>
+            <h2 id="gallery-title">Secret Gallery</h2>
+            <p class="supporting-text">Access granted. The protected images are now revealed.</p>
+            <div class="gallery-grid">
+                <img src="https://picsum.photos/id/1015/300/200" alt="Landscape">
+                <img src="https://picsum.photos/id/1016/300/200" alt="Mountains">
+            </div>
+        </section>
+    </main>
 
     <script src="app.js"></script>
 </body>
