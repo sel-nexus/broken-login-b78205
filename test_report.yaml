@@ -7,16 +7,23 @@ summary:
       - glob("**/*test*") returned no matches.
   slice_verification:
     - todo_id: stabilize-login-flow
-      verify: node tests/app.test.js
+      verify: node tests/auth.test.js && node tests/login-ui.test.js
       result: pass
       assertions:
         - authenticate accepts the supported credential pair
         - authenticate rejects the legacy bypass username without a password
+        - attemptLogin trims the username before authenticating
+        - attemptLogin clears the password after a successful login
         - attemptLogin reveals the gallery for valid credentials
         - attemptLogin keeps the gallery hidden and shows a generic error for invalid credentials
+        - attemptLogin rejects empty credentials
+        - attemptLogin rejects whitespace-only usernames
+        - initializeLoginForm binds the login click handler
 layers:
   unit:
-    command: node tests/app.test.js
+    command:
+      - node tests/auth.test.js
+      - node tests/login-ui.test.js
     result: pass
   api:
     command: not_applicable
@@ -27,9 +34,11 @@ layers:
     result: not_run
     reason: Single-slice static repository has no cross-feature backend integrations.
   e2e:
-    command: node tests/app.test.js
+    command: node node_modules/@playwright/test/cli.js test
     result: pass
-    reason: DOM-level login journey coverage executed through the regression harness for this tiny static site.
+    assertions:
+      - valid login reveals the gallery without console errors
+      - invalid login keeps the gallery hidden and shows the generic error
   build:
     command: node --check app.js
     result: pass
