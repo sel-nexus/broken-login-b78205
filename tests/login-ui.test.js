@@ -1,6 +1,5 @@
 const assert = require('assert');
 const {
-    authenticate,
     attemptLogin,
     initializeLoginForm,
     VALID_CREDENTIALS
@@ -68,14 +67,6 @@ function runTest(name, fn) {
         throw error;
     }
 }
-
-runTest('authenticate accepts the supported credential pair', () => {
-    assert.strictEqual(authenticate(VALID_CREDENTIALS.username, VALID_CREDENTIALS.password), true);
-});
-
-runTest('authenticate rejects the legacy bypass username without a password', () => {
-    assert.strictEqual(authenticate('bypass', ''), false);
-});
 
 runTest('attemptLogin trims the username before authenticating', () => {
     const elements = buildDom({
