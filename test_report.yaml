@@ -1,0 +1,35 @@
+summary:
+  baseline:
+    command: node --check app.js
+    result: pass
+    notes:
+      - Repository had no automated tests at baseline.
+      - glob("**/*test*") returned no matches.
+  slice_verification:
+    - todo_id: stabilize-login-flow
+      verify: node tests/app.test.js
+      result: pass
+      assertions:
+        - authenticate accepts the supported credential pair
+        - authenticate rejects the legacy bypass username without a password
+        - attemptLogin reveals the gallery for valid credentials
+        - attemptLogin keeps the gallery hidden and shows a generic error for invalid credentials
+layers:
+  unit:
+    command: node tests/app.test.js
+    result: pass
+  api:
+    command: not_applicable
+    result: not_run
+    reason: Static repository has no backend API surface.
+  integration:
+    command: not_applicable
+    result: not_run
+    reason: Single-slice static repository has no cross-feature backend integrations.
+  e2e:
+    command: node tests/app.test.js
+    result: pass
+    reason: DOM-level login journey coverage executed through the regression harness for this tiny static site.
+  build:
+    command: node --check app.js
+    result: pass

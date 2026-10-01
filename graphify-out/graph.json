@@ -1,45 +1,437 @@
 {
-  "directed": false,
-  "multigraph": false,
-  "graph": {},
   "nodes": [
     {
+      "id": "app",
       "label": "app.js",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "app.js",
-      "id": "app",
-      "community_name": "app.js"
+      "community": 0
     },
     {
-      "label": "attemptLogin()",
+      "id": "app_valid_credentials",
+      "label": "VALID_CREDENTIALS",
       "file_type": "code",
       "source_file": "app.js",
       "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_authenticate",
+      "label": "authenticate()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_setauthstate",
+      "label": "setAuthState()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L30",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_getloginelements",
+      "label": "getLoginElements()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L55",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_attemptlogin",
+      "label": "attemptLogin()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L71",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "attemptlogin()",
-      "id": "app_attemptlogin",
-      "community_name": "app.js"
+      "community": 0
+    },
+    {
+      "id": "changelog",
+      "label": "CHANGELOG.md",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_changelog",
+      "label": "Changelog",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_changed",
+      "label": "Changed",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_modified_files",
+      "label": "Modified files",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_breaking_changes",
+      "label": "Breaking changes",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_migration_notes",
+      "label": "Migration notes",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_app_test",
+      "label": "app.test.js",
+      "file_type": "code",
+      "source_file": "tests/app.test.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_app_test_assert",
+      "label": "assert",
+      "file_type": "code",
+      "source_file": "tests/app.test.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_app_test_authenticate_attemptlogin_valid_credentials",
+      "label": "{ authenticate, attemptLogin, VALID_CREDENTIALS }",
+      "file_type": "code",
+      "source_file": "tests/app.test.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_app_test_createelement",
+      "label": "createElement()",
+      "file_type": "code",
+      "source_file": "tests/app.test.js",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_app_test_builddom",
+      "label": "buildDom()",
+      "file_type": "code",
+      "source_file": "tests/app.test.js",
+      "source_location": "L27",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_app_test_runtest",
+      "label": "runTest()",
+      "file_type": "code",
+      "source_file": "tests/app.test.js",
+      "source_location": "L49",
+      "_callable": true,
+      "_origin": "ast"
     }
   ],
   "links": [
     {
+      "source": "app",
+      "target": "app_valid_credentials",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app.js",
       "source_location": "L1",
       "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "app",
-      "target": "app_attemptlogin"
+      "target": "app_authenticate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_setauthstate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_getloginelements",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_attemptlogin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_attemptlogin",
+      "target": "app_getloginelements",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_attemptlogin",
+      "target": "app_authenticate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_attemptlogin",
+      "target": "app_setauthstate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_authenticate",
+      "relation": "indirect_call",
+      "context": "collection",
+      "confidence": "INFERRED",
+      "source_file": "app.js",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_setauthstate",
+      "relation": "indirect_call",
+      "context": "collection",
+      "confidence": "INFERRED",
+      "source_file": "app.js",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_attemptlogin",
+      "relation": "indirect_call",
+      "context": "collection",
+      "confidence": "INFERRED",
+      "source_file": "app.js",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog",
+      "target": "changelog_changelog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_changelog",
+      "target": "changelog_changed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_changelog",
+      "target": "changelog_modified_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_changelog",
+      "target": "changelog_breaking_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_changelog",
+      "target": "changelog_migration_notes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "tests_app_test_assert",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "app_authenticate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "app_attemptlogin",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "app_valid_credentials",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "tests_app_test_authenticate_attemptlogin_valid_credentials",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "tests_app_test_createelement",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "tests_app_test_builddom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test",
+      "target": "tests_app_test_runtest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_app_test_builddom",
+      "target": "tests_app_test_createelement",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/app.test.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
     }
   ],
-  "hyperedges": [],
-  "built_at_commit": "157cf2e05cc7c3a1b357543d0400f383820ebba9"
+  "metadata": {
+    "built_at": "2026-10-01T07:14:43.820070+00:00",
+    "version": "graph_update-v1",
+    "codebase_root": "C:\\artifacts-v2\\T011GSU2iRpR9000101102607105153\\developer",
+    "force": true,
+    "files_scanned": 3
+  }
 }

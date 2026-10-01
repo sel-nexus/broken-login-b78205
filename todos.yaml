@@ -15,4 +15,4 @@ todos:
       - The previous bypass username path is rejected and covered by an automated regression test.
       - The repository includes a repeatable test command that exercises the repaired login behavior.
     verify: node tests/app.test.js
-    status: pending
+    status: done
