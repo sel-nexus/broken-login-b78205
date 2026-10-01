@@ -58,7 +58,8 @@ function getLoginElements() {
         passwordInput: document.getElementById('password'),
         loginContainer: document.getElementById('login-container'),
         galleryContainer: document.getElementById('gallery-container'),
-        errorMsg: document.getElementById('error-msg')
+        errorMsg: document.getElementById('error-msg'),
+        loginButton: document.getElementById('login-button')
     };
 }
 
@@ -77,11 +78,38 @@ function attemptLogin() {
     return setAuthState(isAuthenticated, elements);
 }
 
+/**
+ * Bind the click behavior for the login button when running in the browser.
+ *
+ * Returns:
+ *   Undefined.
+ */
+function initializeLoginForm() {
+    if (typeof document === 'undefined') {
+        return;
+    }
+
+    const { loginButton } = getLoginElements();
+
+    if (loginButton) {
+        loginButton.addEventListener('click', attemptLogin);
+    }
+}
+
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeLoginForm);
+    } else {
+        initializeLoginForm();
+    }
+}
+
 if (typeof module !== 'undefined') {
     module.exports = {
         VALID_CREDENTIALS,
         authenticate,
         setAuthState,
-        attemptLogin
+        attemptLogin,
+        initializeLoginForm
     };
 }
