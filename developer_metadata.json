@@ -1,0 +1,48 @@
+{
+  "tech_stack": "Static HTML/CSS/JavaScript site",
+  "schema_version": "2.0",
+  "components": [
+    {
+      "role": "frontend",
+      "root": ".",
+      "test": {
+        "working_directory": ".",
+        "command": ["node", "tests/app.test.js"],
+        "requires_database": false
+      },
+      "runtime": {
+        "stack": "static",
+        "dockerfile": "",
+        "build_context": ".",
+        "build_command": ["node", "--check", "app.js"],
+        "start_command": ["open", "index.html"],
+        "container_port": 80,
+        "bind_address": "0.0.0.0",
+        "health_path": "/",
+        "env_example_paths": []
+      }
+    }
+  ],
+  "codebase_path": "frontend",
+  "git_link": "https://github.com/sel-nexus/broken-login-b78205",
+  "commit_sha": "6644ab77b1d689d2ff308d999176ea03bb5969d8",
+  "push_branch": "brownfield/t011gsu2irpr9000101102607105153",
+  "plan_path": "PLAN.md",
+  "plan_summary": "Repaired the existing static login/gallery application by removing the credential bypass path, tightening the login error state, and refactoring the auth logic into testable units. Added a lightweight Node-based regression harness and updated the repository documentation so the repaired behavior can be revalidated repeatably.",
+  "readme_path": "README.md",
+  "test_report_path": "test_report.yaml",
+  "tests_ran": true,
+  "unit_tests_passed": true,
+  "integration_tests_ran": false,
+  "api_tests_ran": false,
+  "e2e_tests_ran": true,
+  "commits_count": 2,
+  "run_mode": "external",
+  "changelog_path": "CHANGELOG.md",
+  "existing_tree_used": true,
+  "baseline_tests_ran": true,
+  "risk_assessed": true,
+  "pr_url": "https://github.com/sel-nexus/broken-login-b78205/pull/1",
+  "pr_number": 1,
+  "warnings": []
+}

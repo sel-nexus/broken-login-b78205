@@ -1,0 +1,11 @@
+status: ready_to_publish
+remote_url: https://github.com/sel-nexus/broken-login-b78205
+repository_url: https://github.com/sel-nexus/broken-login-b78205
+branch: brownfield/t011gsu2irpr9000101102607105153
+commit_sha: 6644ab77b1d689d2ff308d999176ea03bb5969d8
+updated_branch: brownfield/t011gsu2irpr9000101102607105153
+artifacts:
+  master_plan: PLAN.md
+  readme: README.md
+  test_report: test_report.yaml
+  developer_metadata_json: developer_metadata.json
