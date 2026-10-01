@@ -1,0 +1,45 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "app.js",
+      "id": "app",
+      "community_name": "app.js"
+    },
+    {
+      "label": "attemptLogin()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "attemptlogin()",
+      "id": "app_attemptlogin",
+      "community_name": "app.js"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "app",
+      "target": "app_attemptlogin"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "157cf2e05cc7c3a1b357543d0400f383820ebba9"
+}
